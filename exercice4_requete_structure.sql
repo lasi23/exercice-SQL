@@ -92,3 +92,14 @@ ADD CONSTRAINT fk_posses_account
 FOREIGN KEY(id_account)
 REFERENCES account(id_account);
 
+alter table account
+add COLUMN account_img VARCHAR(255) DEFAULT "default.png" NULL;
+
+alter table book
+add column back_cover VARCHAR(255) NULL;
+
+alter table commentary
+add COLUMN note INT DEFAULT 0 NOT NULL;
+
+alter table book
+modify COLUMN publication_date DATETIME DEFAULT CURRENT_TIMESTAMP not null;
